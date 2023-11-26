@@ -32,13 +32,13 @@ export class Tab1Page {
       Discount_Applied: new FormControl('', Validators.required),
       Promo_Code_Used: new FormControl('', Validators.required),
       Previous_Purchases: new FormControl('', Validators.required),
-      Preferred_Payment_Method: new FormControl('', Validators.required),
+      Preferred_Payment_Method: new FormControl('NA', Validators.required),
       Frequency_of_Purchases: new FormControl('', Validators.required),
-      Estado: new FormControl('', Validators.required),
+      Estado: new FormControl('Activo', Validators.required),
     });
   }
 
   public save(){
-    
+
   }
 }

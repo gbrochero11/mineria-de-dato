@@ -120,6 +120,53 @@
           </ion-select>
         </ion-item>
       </ion-list>
+
+      <ion-list>
+        <ion-item>
+          <ion-select label="Aplica descuento" label-placement="floating" 
+          formControlName="Discount_Applied">
+            <ion-select-option value="Yes">Si</ion-select-option>
+            <ion-select-option value="No">No</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-list>
+
+      <ion-list>
+        <ion-item>
+          <ion-select label="Aplica cupon" label-placement="floating" 
+          formControlName="Promo_Code_Used">
+            <ion-select-option value="Yes">Si</ion-select-option>
+            <ion-select-option value="No">No</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-list>
+
+      <ion-list>
+        <ion-item>
+          <ion-select label="Numero de transacciones" label-placement="floating" 
+          formControlName="Previous_Purchases">
+            <ion-select-option [value]="number" *ngFor="let number in 100">{{number}}</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-list>
+
+      <ion-list>
+        <ion-item>
+          <ion-select label="Metodo de pago" label-placement="floating" 
+          formControlName="Payment_Method">
+            <ion-select-option [value]="number" *ngFor="let number in 100">{{number}}</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-list>
+
+      <ion-list>
+        <ion-item>
+          <ion-select label="Frecuencia de compra" label-placement="floating" 
+          formControlName="Frequency_of_Purchases">
+            <ion-select-option [value]="number" *ngFor="let number in 100">{{number}}</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-list>
     </ion-list>
 
     <ion-button
