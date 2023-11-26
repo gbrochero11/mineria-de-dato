@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { of } from 'rxjs';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
@@ -11,14 +12,15 @@ export class AuthService {
   constructor(private http: HttpClient) {}
 
   public login(data: any) {
-    return this.http.post(`${environment.api}/usuarios/login`, data);
+    // return this.http.post(`${environment.api}/usuarios/login`, data);
+    return of({Identificacion:'', Contraseña:'', Rol: 'ADMIN'});
   }
 
   public setAuth(data: any) {
-    localStorage.setItem(this.AUTH_ITEM, data);
+    localStorage.setItem(this.AUTH_ITEM, JSON.stringify(data));
   }
 
   public getAuth() {
-    return localStorage.getItem(this.AUTH_ITEM);
+    return JSON.parse(localStorage.getItem(this.AUTH_ITEM)!);
   }
 }

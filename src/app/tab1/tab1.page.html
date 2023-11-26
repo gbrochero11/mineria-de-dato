@@ -20,25 +20,43 @@
 
       <ion-list>
         <ion-item>
-          <ion-select label="Genero" label-placement="floating" formControlName="Gender">
+          <ion-select
+            label="Genero"
+            label-placement="floating"
+            formControlName="Gender"
+          >
             <ion-select-option value="Male">Male</ion-select-option>
             <ion-select-option value="Female">Female</ion-select-option>
           </ion-select>
         </ion-item>
       </ion-list>
 
-      <ion-item>
-        <ion-label position="floating">Articulo comprado</ion-label>
-        <ion-select label="Categoria" label-placement="floating" formControlName="Category">
-          <ion-select-option [value]="item"
-            *ngFor="let item in constanstComponent.Item_Purchased">{{item}}</ion-select-option>
-        </ion-select>
-      </ion-item>
+      <ion-list>
+        <ion-item>
+          <ion-select
+            label="Articulo comprado"
+            label-placement="floating"
+            formControlName="Item_Purchased"
+          >
+            <ion-select-option
+              [value]="item"
+              *ngFor="let item of constanstComponent.Item_Purchased"
+              >{{item}}</ion-select-option
+            >
+          </ion-select>
+        </ion-item>
+      </ion-list>
 
       <ion-list>
         <ion-item>
-          <ion-select label="Categoria" label-placement="floating" formControlName="Category">
-            <ion-select-option value="Accessories">Accessories</ion-select-option>
+          <ion-select
+            label="Categoria"
+            label-placement="floating"
+            formControlName="Category"
+          >
+            <ion-select-option value="Accessories"
+              >Accessories</ion-select-option
+            >
             <ion-select-option value="Footwear">Footwear</ion-select-option>
             <ion-select-option value="Clothing">Clothing</ion-select-option>
             <ion-select-option value="Outerwear">Outerwear</ion-select-option>
@@ -54,16 +72,27 @@
 
       <ion-list>
         <ion-item>
-          <ion-select label="Ubicacion" label-placement="floating" formControlName="Location">
-            <ion-select-option [value]="item"
-              *ngFor="let item of constanstComponent.Location">{{item}}</ion-select-option>
+          <ion-select
+            label="Ubicacion"
+            label-placement="floating"
+            formControlName="Location"
+          >
+            <ion-select-option
+              [value]="item"
+              *ngFor="let item of constanstComponent.Location"
+              >{{item}}</ion-select-option
+            >
           </ion-select>
         </ion-item>
       </ion-list>
 
       <ion-list>
         <ion-item>
-          <ion-select label="Talla" label-placement="floating" formControlName="Size">
+          <ion-select
+            label="Talla"
+            label-placement="floating"
+            formControlName="Size"
+          >
             <ion-select-option value="XS">XS</ion-select-option>
             <ion-select-option value="S">S</ion-select-option>
             <ion-select-option value="M">M</ion-select-option>
@@ -74,14 +103,26 @@
       </ion-list>
 
       <ion-item>
-        <ion-select label="Color" label-placement="floating" formControlName="Color">
-          <ion-select-option [value]="item" *ngFor="let item of constanstComponent.Color">{{item}}</ion-select-option>
+        <ion-select
+          label="Color"
+          label-placement="floating"
+          formControlName="Color"
+        >
+          <ion-select-option
+            [value]="item"
+            *ngFor="let item of constanstComponent.Color"
+            >{{item}}</ion-select-option
+          >
         </ion-select>
       </ion-item>
 
       <ion-list>
         <ion-item>
-          <ion-select label="Temporada" label-placement="floating" formControlName="Season">
+          <ion-select
+            label="Temporada"
+            label-placement="floating"
+            formControlName="Season"
+          >
             <ion-select-option value="Spring">Spring</ion-select-option>
             <ion-select-option value="Winter">Winter</ion-select-option>
             <ion-select-option value="Summer">Summer</ion-select-option>
@@ -92,7 +133,11 @@
 
       <ion-list>
         <ion-item>
-          <ion-select label="Calificacion" label-placement="floating" formControlName="Review_Rating">
+          <ion-select
+            label="Calificacion"
+            label-placement="floating"
+            formControlName="Review_Rating"
+          >
             <ion-select-option value="1">1</ion-select-option>
             <ion-select-option value="2">2</ion-select-option>
             <ion-select-option value="3">3</ion-select-option>
@@ -104,7 +149,11 @@
 
       <ion-list>
         <ion-item>
-          <ion-select label="Aplica suscripcion" label-placement="floating" formControlName="Subscription_Status">
+          <ion-select
+            label="Aplica suscripcion"
+            label-placement="floating"
+            formControlName="Subscription_Status"
+          >
             <ion-select-option value="Yes">Si</ion-select-option>
             <ion-select-option value="No">No</ion-select-option>
           </ion-select>
@@ -113,16 +162,27 @@
 
       <ion-list>
         <ion-item>
-          <ion-select label="Metodo de entrega" label-placement="floating" formControlName="Shipping_Type">
-            <ion-select-option [value]="item"
-              *ngFor="let item of constanstComponent.Shipping_Type">{{item}}</ion-select-option>
+          <ion-select
+            label="Metodo de entrega"
+            label-placement="floating"
+            formControlName="Shipping_Type"
+          >
+            <ion-select-option
+              [value]="item"
+              *ngFor="let item of constanstComponent.Shipping_Type"
+              >{{item}}</ion-select-option
+            >
           </ion-select>
         </ion-item>
       </ion-list>
 
       <ion-list>
         <ion-item>
-          <ion-select label="Aplica descuento" label-placement="floating" formControlName="Discount_Applied">
+          <ion-select
+            label="Aplica descuento"
+            label-placement="floating"
+            formControlName="Discount_Applied"
+          >
             <ion-select-option value="Yes">Si</ion-select-option>
             <ion-select-option value="No">No</ion-select-option>
           </ion-select>
@@ -131,7 +191,11 @@
 
       <ion-list>
         <ion-item>
-          <ion-select label="Aplica cupon" label-placement="floating" formControlName="Promo_Code_Used">
+          <ion-select
+            label="Aplica cupon"
+            label-placement="floating"
+            formControlName="Promo_Code_Used"
+          >
             <ion-select-option value="Yes">Si</ion-select-option>
             <ion-select-option value="No">No</ion-select-option>
           </ion-select>
@@ -140,30 +204,60 @@
 
       <ion-list>
         <ion-item>
-          <ion-select label="Numero de transacciones" label-placement="floating" formControlName="Previous_Purchases">
-            <ion-select-option [value]="number" *ngFor="let number in 100">{{number}}</ion-select-option>
+          <ion-select
+            label="Numero de transacciones"
+            label-placement="floating"
+            formControlName="Previous_Purchases"
+          >
+            <ion-select-option [value]="i + 1" *ngFor="let number of iterableArray ; let i = index"
+              >{{i + 1}}</ion-select-option
+            >
           </ion-select>
         </ion-item>
       </ion-list>
 
       <ion-list>
         <ion-item>
-          <ion-select label="Metodo de pago" label-placement="floating" formControlName="Payment_Method">
-            <ion-select-option [value]="item" *ngFor="let item in constanstComponent.Payment_Method">{{item}}</ion-select-option>
+          <ion-select
+            label="Metodo de pago"
+            label-placement="floating"
+            formControlName="Payment_Method"
+          >
+            <ion-select-option
+              [value]="item"
+              *ngFor="let item of constanstComponent.Payment_Method"
+              >{{item}}</ion-select-option
+            >
           </ion-select>
         </ion-item>
       </ion-list>
 
       <ion-list>
         <ion-item>
-          <ion-select label="Frecuencia de compra" label-placement="floating" formControlName="Frequency_of_Purchases">
-            <ion-select-option [value]="item" *ngFor="let item in constanstComponent.Frequency_of_Purchases">{{item}}</ion-select-option>
+          <ion-select
+            label="Frecuencia de compra"
+            label-placement="floating"
+            formControlName="Frequency_of_Purchases"
+          >
+            <ion-select-option
+              [value]="item"
+              *ngFor="let item of constanstComponent.Frequency_of_Purchases"
+              >{{item}}</ion-select-option
+            >
           </ion-select>
         </ion-item>
       </ion-list>
     </ion-list>
 
-    <ion-button expand="full" fill="outline" size="default" shape="round" class="ion-margin-top" type="submit"
-      [disabled]="form.invalid">Crear</ion-button>
+    <ion-button
+      expand="full"
+      fill="outline"
+      size="default"
+      shape="round"
+      class="ion-margin-top"
+      type="submit"
+      [disabled]="form.invalid"
+      >Crear</ion-button
+    >
   </form>
 </ion-content>

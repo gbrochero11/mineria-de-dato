@@ -6,7 +6,9 @@ import {
   Validators,
 } from '@angular/forms';
 
-import * as constans from './constans.ts'
+import * as constans from './constans';
+import { RegisterDataService } from '../services/register-data.service';
+import { ToastService } from '../services/toast.service';
 
 @Component({
   selector: 'app-tab1',
@@ -15,9 +17,14 @@ import * as constans from './constans.ts'
 })
 export class Tab1Page {
   public form!: FormGroup;
-  public constanstComponent = constans
+  public constanstComponent = constans;
+  iterableArray: any[] = new Array(100);
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(
+    private formBuilder: FormBuilder,
+    private _registerDataService: RegisterDataService,
+    private _toastService: ToastService
+  ) {
     this.form = this.formBuilder.group({
       Age: new FormControl('', Validators.required),
       Gender: new FormControl('', Validators.required),
@@ -41,7 +48,23 @@ export class Tab1Page {
     });
   }
 
-  public save(){
-
+  public save() {
+    this._registerDataService.register(this.form.value).subscribe({
+      next: async (response) => {
+        await this._toastService.presentToast(
+          'Informacion guardada exitosamente!',
+          2000,
+          'bottom'
+        );
+        this.form.reset();
+      },
+      error: async (response) => {
+        await this._toastService.presentToast(
+          'Uups! Ha ocurrido un error, intentelo mas tarde.',
+          2000,
+          'bottom'
+        );
+      },
+    });
   }
 }

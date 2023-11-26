@@ -37,6 +37,7 @@ export class RegisterPage {
           2000,
           'bottom'
         );
+        this.form.reset();
       },
       error: async (response) => {
         await this._toastService.presentToast(

@@ -1,13 +1,12 @@
 <ion-tabs>
   <ion-tab-bar slot="bottom">
-    <ion-tab-button tab="tab1" href="/home/register-data">
-      <ion-icon name="create-outline"></ion-icon>
-      <ion-label>Registro de datos</ion-label>
-    </ion-tab-button>
-
     <ion-tab-button tab="tab2" href="/home/dashboard" *ngIf="isAdmin">
       <ion-icon name="home-outline"></ion-icon>
       <ion-label>Dashboard</ion-label>
+    </ion-tab-button>
+    <ion-tab-button tab="tab1" href="/home/register-data">
+      <ion-icon name="create-outline"></ion-icon>
+      <ion-label>Registro de datos</ion-label>
     </ion-tab-button>
   </ion-tab-bar>
 </ion-tabs>

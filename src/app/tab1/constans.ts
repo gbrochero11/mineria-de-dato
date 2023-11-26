@@ -1,4 +1,4 @@
-export const ItemPurchased = [
+export const Item_Purchased = [
   'Gloves',
   'Shirt',
   'Hat',
