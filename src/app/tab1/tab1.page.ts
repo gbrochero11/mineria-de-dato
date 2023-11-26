@@ -20,6 +20,8 @@ export class Tab1Page {
   public constanstComponent = constans;
   iterableArray: any[] = new Array(100);
 
+  public loader = false;
+
   constructor(
     private formBuilder: FormBuilder,
     private _registerDataService: RegisterDataService,
@@ -49,6 +51,7 @@ export class Tab1Page {
   }
 
   public save() {
+    this.loader = true;
     this._registerDataService.register(this.form.value).subscribe({
       next: async (response) => {
         await this._toastService.presentToast(
@@ -56,9 +59,11 @@ export class Tab1Page {
           2000,
           'bottom'
         );
+        this.loader = false;
         this.form.reset();
       },
       error: async (response) => {
+        this.loader = false;
         await this._toastService.presentToast(
           'Uups! Ha ocurrido un error, intentelo mas tarde.',
           2000,

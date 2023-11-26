@@ -18,6 +18,8 @@ import { NavController } from '@ionic/angular';
 export class LoginPage {
   public form!: FormGroup;
 
+  public loader = false;
+
   constructor(
     private navCtrl: NavController,
     private formBuilder: FormBuilder,
@@ -31,12 +33,15 @@ export class LoginPage {
   }
 
   public login() {
+    this.loader = true;
     this._authService.login(this.form.value).subscribe({
       next: (response) => {
+        this.loader = false;
         this._authService.setAuth(response);
         this.navCtrl.navigateForward('/home/register-data');
       },
       error: async (response) => {
+        this.loader = false;
         await this._toastService.presentToast(
           'Uups! Ha ocurrido un error, intentelo mas tarde.',
           2000,

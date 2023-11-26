@@ -17,6 +17,8 @@ import { ToastService } from '../services/toast.service';
 export class RegisterPage {
   public form!: FormGroup;
 
+  public loader = false;
+
   constructor(
     private formBuilder: FormBuilder,
     private _registerService: RegisterService,
@@ -30,6 +32,7 @@ export class RegisterPage {
   }
 
   public register() {
+    this.loader = true;
     this._registerService.register(this.form.value).subscribe({
       next: async (response) => {
         await this._toastService.presentToast(
@@ -37,9 +40,11 @@ export class RegisterPage {
           2000,
           'bottom'
         );
+        this.loader = false;
         this.form.reset();
       },
       error: async (response) => {
+        this.loader = false;
         await this._toastService.presentToast(
           'Uups! Ha ocurrido un error, intentelo mas tarde.',
           2000,
