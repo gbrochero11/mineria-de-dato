@@ -9,45 +9,47 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <form [formGroup]="form">
-    <ion-header collapse="condense" class="ion-margin-bottom">
-      <ion-toolbar>
-        <ion-title size="large">Iniciar sesion</ion-title>
-      </ion-toolbar>
-    </ion-header>
+  <div class="container">
+    <form [formGroup]="form">
+      <ion-header collapse="condense" class="ion-margin-bottom">
+        <ion-toolbar>
+          <ion-title size="large">Iniciar sesion</ion-title>
+        </ion-toolbar>
+      </ion-header>
 
-    <ion-list class="ion-margin-top center-container">
-      <ion-item>
-        <ion-label position="floating">Usuario</ion-label>
-        <ion-input type="text" formControlName="Identificacion"></ion-input>
-      </ion-item>
+      <ion-list class="ion-margin-top center-container">
+        <ion-item>
+          <ion-label position="floating">Usuario</ion-label>
+          <ion-input type="text" formControlName="Identificacion"></ion-input>
+        </ion-item>
 
-      <ion-item>
-        <ion-label position="floating">Contraseña</ion-label>
-        <ion-input type="password" formControlName="Contraseña"></ion-input>
-      </ion-item>
-    </ion-list>
+        <ion-item>
+          <ion-label position="floating">Contraseña</ion-label>
+          <ion-input type="password" formControlName="Contraseña"></ion-input>
+        </ion-item>
+      </ion-list>
 
+      <ion-button
+        expand="full"
+        fill="outline"
+        size="default"
+        shape="round"
+        class="ion-margin-top"
+        type="submit"
+        [disabled]="this.form.invalid"
+        (click)="login()"
+        >Iniciar Sesión</ion-button
+      >
+    </form>
     <ion-button
       expand="full"
       fill="outline"
       size="default"
       shape="round"
       class="ion-margin-top"
-      type="submit"
-      [disabled]="this.form.invalid"
-      (click)="login()"
-      >Iniciar Sesión</ion-button
+      (click)="register()"
+      type="button"
+      >Registrarse</ion-button
     >
-  </form>
-  <ion-button
-    expand="full"
-    fill="outline"
-    size="default"
-    shape="round"
-    class="ion-margin-top"
-    (click)="register()"
-    type="button"
-    >Registrarse</ion-button
-  >
+  </div>
 </ion-content>

@@ -39,6 +39,7 @@ export class LoginPage {
         this.loader = false;
         this._authService.setAuth(response);
         this.navCtrl.navigateForward('/home/register-data');
+        this.form.reset();
       },
       error: async (response) => {
         this.loader = false;

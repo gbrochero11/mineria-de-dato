@@ -13,8 +13,7 @@ export class AuthService {
   constructor(private http: HttpClient) {}
 
   public login(data: any) {
-    // return this.http.post(`${environment.api}/usuarios/login`, data);
-    return of({Identificacion:'', Contraseña:'', Rol: 'ADMIN'});
+    return this.http.post(`${environment.api}/usuarios/login`, data);
   }
 
   public setAuth(data: any) {
@@ -25,7 +24,7 @@ export class AuthService {
     return JSON.parse(localStorage.getItem(this.AUTH_ITEM)!);
   }
 
-  public closeSesion(){
-    localStorage.clear()
+  public closeSesion() {
+    localStorage.clear();
   }
 }

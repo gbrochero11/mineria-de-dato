@@ -10,7 +10,6 @@ export class RegisterService {
   constructor(private http: HttpClient) {}
 
   public register(data: any) {
-    // return this.http.post(`${environment.api}/usuarios/agregar`, data);
-    return of({})
+    return this.http.post(`${environment.api}/usuarios/agregar`, data);
   }
 }
