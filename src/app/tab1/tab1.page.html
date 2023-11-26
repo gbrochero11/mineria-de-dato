@@ -1,102 +1,136 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Registro de datos
-    </ion-title>
+    <ion-title> Registro de datos </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Registro de datos</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <form (ngSubmit)="save()" [formGroup]="form">
+    <ion-header collapse="condense">
+      <ion-toolbar>
+        <ion-title size="large">Registro de datos</ion-title>
+      </ion-toolbar>
+    </ion-header>
 
-
-  <ion-list class="ion-margin-top">
-    <ion-item>
-      <ion-label position="floating">Edad</ion-label>
-      <ion-input type="number"></ion-input>
-    </ion-item>
-
-    <ion-list>
+    <ion-list class="ion-margin-top">
       <ion-item>
-        <ion-select label="Genero" label-placement="floating">
-          <ion-select-option value="Male">Male</ion-select-option>
-          <ion-select-option value="Female">Female</ion-select-option>
-        </ion-select>
+        <ion-label position="floating">Edad</ion-label>
+        <ion-input type="number" formControlName="Age"></ion-input>
       </ion-item>
+
+      <ion-list>
+        <ion-item>
+          <ion-select label="Genero" label-placement="floating" formControlName="Gender">
+            <ion-select-option value="Male">Male</ion-select-option>
+            <ion-select-option value="Female">Female</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-list>
+
+      <ion-item>
+        <ion-label position="floating">Articulo comprado</ion-label>
+        <ion-input type="text" formControlName="Item_Purchased"></ion-input>
+      </ion-item>
+
+      <ion-list>
+        <ion-item>
+          <ion-select label="Categoria" label-placement="floating" formControlName="Category">
+            <ion-select-option value="Clothing">Clothing</ion-select-option>
+            <ion-select-option value="Accessories"
+              >Accessories</ion-select-option
+            >
+            <ion-select-option value="Other">Other</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-list>
+
+      <ion-item>
+        <ion-label position="floating">Valor</ion-label>
+        <ion-input type="number" formControlName="Purchase_Amount"></ion-input>
+      </ion-item>
+
+      <ion-list>
+        <ion-item>
+          <ion-select label="Ubicacion" label-placement="floating" formControlName="Location">
+            <ion-select-option value="Alabama">Alabama</ion-select-option>
+            <ion-select-option value="Mississippi"
+              >Mississippi</ion-select-option
+            >
+            <ion-select-option value="Montana">Montana</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-list>
+
+      <ion-list>
+        <ion-item>
+          <ion-select label="Talla" label-placement="floating" formControlName="Size">
+            <ion-select-option value="XS">XS</ion-select-option>
+            <ion-select-option value="S">S</ion-select-option>
+            <ion-select-option value="M">M</ion-select-option>
+            <ion-select-option value="L">L</ion-select-option>
+            <ion-select-option value="XL">XL</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-list>
+
+      <ion-item>
+        <ion-label position="floating">Color</ion-label>
+        <ion-input type="text" formControlName="Color"></ion-input>
+      </ion-item>
+
+      <ion-list>
+        <ion-item>
+          <ion-select label="Temporada" label-placement="floating" formControlName="Season">
+            <ion-select-option value="Spring">Spring</ion-select-option>
+            <ion-select-option value="Winter">Winter</ion-select-option>
+            <ion-select-option value="Summer">Summer</ion-select-option>
+            <ion-select-option value="Fall">Fall</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-list>
+
+      <ion-list>
+        <ion-item>
+          <ion-select label="Calificacion" label-placement="floating" formControlName="Review_Rating">
+            <ion-select-option value="1">1</ion-select-option>
+            <ion-select-option value="2">2</ion-select-option>
+            <ion-select-option value="3">3</ion-select-option>
+            <ion-select-option value="4">4</ion-select-option>
+            <ion-select-option value="5">5</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-list>
+
+      <ion-list>
+        <ion-item>
+          <ion-select label="Aplica suscripcion" label-placement="floating" 
+          formControlName="Subscription_Status">
+            <ion-select-option value="Yes">Si</ion-select-option>
+            <ion-select-option value="No">No</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-list>
+
+      <ion-list>
+        <ion-item>
+          <ion-select label="Metodo de entrega" label-placement="floating" 
+          formControlName="Shipping_Type">
+            <ion-select-option value="Yes">Si</ion-select-option>
+            <ion-select-option value="No">No</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-list>
     </ion-list>
 
-    <ion-item>
-      <ion-label position="floating">Articulo comprado</ion-label>
-      <ion-input type="text"></ion-input>
-    </ion-item>
-
-    <ion-list>
-      <ion-item>
-        <ion-select label="Categoria" label-placement="floating">
-          <ion-select-option value="Clothing">Clothing</ion-select-option>
-          <ion-select-option value="Accessories">Accessories</ion-select-option>
-          <ion-select-option value="Other">Other</ion-select-option>
-        </ion-select>
-      </ion-item>
-    </ion-list>
-
-    <ion-item>
-      <ion-label position="floating">Valor</ion-label>
-      <ion-input type="number"></ion-input>
-    </ion-item>
-
-    <ion-list>
-      <ion-item>
-        <ion-select label="Ubicacion" label-placement="floating">
-          <ion-select-option value="Alabama">Alabama</ion-select-option>
-          <ion-select-option value="Mississippi">Mississippi</ion-select-option>
-          <ion-select-option value="Montana">Montana</ion-select-option>
-        </ion-select>
-      </ion-item>
-    </ion-list>
-
-    <ion-list>
-      <ion-item>
-        <ion-select label="Talla" label-placement="floating">
-          <ion-select-option value="XS">XS</ion-select-option>
-          <ion-select-option value="S">S</ion-select-option>
-          <ion-select-option value="M">M</ion-select-option>
-          <ion-select-option value="L">L</ion-select-option>
-          <ion-select-option value="XL">XL</ion-select-option>
-        </ion-select>
-      </ion-item>
-    </ion-list>
-
-    <ion-item>
-      <ion-label position="floating">Color</ion-label>
-      <ion-input type="text"></ion-input>
-    </ion-item>
-
-
-    <ion-list>
-      <ion-item>
-        <ion-select label="Temporada" label-placement="floating">
-          <ion-select-option value="Spring">Spring</ion-select-option>
-          <ion-select-option value="Winter">Winter</ion-select-option>
-          <ion-select-option value="Summer">Summer</ion-select-option>
-          <ion-select-option value="Fall">Fall</ion-select-option>
-        </ion-select>
-      </ion-item>
-    </ion-list>
-
-  </ion-list>
-
-  <ion-button
-    expand="full"
-    fill="outline"
-    size="default"
-    shape="round"
-    class="ion-margin-top"
-    >Crear</ion-button
-  >
-
+    <ion-button
+      expand="full"
+      fill="outline"
+      size="default"
+      shape="round"
+      class="ion-margin-top"
+      type="submit"
+      [disabled]="form.invalid"
+      >Crear</ion-button
+    >
+  </form>
 </ion-content>

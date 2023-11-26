@@ -5,6 +5,9 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
+  <form (ngSubmit)="login()" [formGroup]="form">
+
+
   <ion-header collapse="condense" class="ion-margin-bottom">
     <ion-toolbar>
       <ion-title size="large">Iniciar sesion</ion-title>
@@ -14,12 +17,12 @@
   <ion-list class="ion-margin-top center-container">
     <ion-item>
       <ion-label position="floating">Usuario</ion-label>
-      <ion-input type="text"></ion-input>
+      <ion-input type="text" formControlName="Identificacion"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label position="floating">Contraseña</ion-label>
-      <ion-input type="password"></ion-input>
+      <ion-input type="password" formControlName="Contraseña"></ion-input>
     </ion-item>
   </ion-list>
 
@@ -29,7 +32,8 @@
     size="default"
     shape="round"
     class="ion-margin-top"
-    (click)="login()"
+    type="submit"
+    [disabled]="this.form.invalid"
     >Iniciar Sesión</ion-button
   >
   <ion-button
@@ -39,6 +43,8 @@
     shape="round"
     class="ion-margin-top"
     (click)="register()"
+    type="button"
     >Registrarse</ion-button
   >
+</form>
 </ion-content>

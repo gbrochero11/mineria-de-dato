@@ -1,8 +1,6 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Dashboard
-    </ion-title>
+    <ion-title> Dashboard </ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -13,4 +11,28 @@
     </ion-toolbar>
   </ion-header>
 
+  <ion-accordion-group>
+    <ion-accordion value="first">
+      <ion-item slot="header" color="light">
+        <ion-label>Analisis en Google Colab</ion-label>
+      </ion-item>
+      <div class="ion-padding" slot="content">
+        <div>
+          <iframe
+            class="frame"
+            src="https://gestiondedocumentos.s3.amazonaws.com/analisis_datos_shopping_trends.html"
+            frameborder="0"
+            allowfullscreen
+            title="analisis_datos_shopping_trends.html"
+          ></iframe>
+        </div>
+      </div>
+    </ion-accordion>
+    <ion-accordion value="second">
+      <ion-item slot="header" color="light">
+        <ion-label>Tablero DataStudio</ion-label>
+      </ion-item>
+      <div class="ion-padding" slot="content">Second Content</div>
+    </ion-accordion>
+  </ion-accordion-group>
 </ion-content>

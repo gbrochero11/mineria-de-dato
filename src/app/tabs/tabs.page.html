@@ -5,7 +5,7 @@
       <ion-label>Registro de datos</ion-label>
     </ion-tab-button>
 
-    <ion-tab-button tab="tab2" href="/home/dashboard">
+    <ion-tab-button tab="tab2" href="/home/dashboard" *ngIf="isAdmin">
       <ion-icon name="home-outline"></ion-icon>
       <ion-label>Dashboard</ion-label>
     </ion-tab-button>
