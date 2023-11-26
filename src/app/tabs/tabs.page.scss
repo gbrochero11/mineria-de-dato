@@ -1,1 +1,12 @@
 
+@media screen and (min-width: 768px) {
+    .dashboard {
+        display: block !important;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .dashboard {
+        display: none !important;
+    }
+}
