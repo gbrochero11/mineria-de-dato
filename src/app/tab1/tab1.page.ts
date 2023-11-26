@@ -6,6 +6,8 @@ import {
   Validators,
 } from '@angular/forms';
 
+import * as constans from './constans.ts'
+
 @Component({
   selector: 'app-tab1',
   templateUrl: 'tab1.page.html',
@@ -13,6 +15,7 @@ import {
 })
 export class Tab1Page {
   public form!: FormGroup;
+  public constanstComponent = constans
 
   constructor(private formBuilder: FormBuilder) {
     this.form = this.formBuilder.group({
