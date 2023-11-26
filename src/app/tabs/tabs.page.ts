@@ -11,6 +11,6 @@ export class TabsPage {
 
   constructor(private _authService: AuthService) {
     const auth: any = this._authService.getAuth();
-    this.isAdmin = auth['Rol'] == 'ADMIN';
+    this.isAdmin = auth.msg.Rol == 'ADMIN';
   }
 }
