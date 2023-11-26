@@ -9,6 +9,8 @@ import {
 import * as constans from './constans';
 import { RegisterDataService } from '../services/register-data.service';
 import { ToastService } from '../services/toast.service';
+import { NavController } from '@ionic/angular';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-tab1',
@@ -25,7 +27,9 @@ export class Tab1Page {
   constructor(
     private formBuilder: FormBuilder,
     private _registerDataService: RegisterDataService,
-    private _toastService: ToastService
+    private _toastService: ToastService,
+    private _authService: AuthService,
+    private navCtrl: NavController,
   ) {
     this.form = this.formBuilder.group({
       Age: new FormControl('', Validators.required),
@@ -72,4 +76,10 @@ export class Tab1Page {
       },
     });
   }
+
+  closeSesion(){
+    this._authService.closeSesion()
+    this.navCtrl.navigateBack('/');
+  }
+
 }

@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { AuthService } from '../services/auth.service';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-tab2',
@@ -7,6 +9,13 @@ import { Component } from '@angular/core';
 })
 export class Tab2Page {
 
-  constructor() {}
+  constructor(private _authService: AuthService,
+    private navCtrl: NavController,
+    ) {}
+
+  closeSesion(){
+    this._authService.closeSesion()
+    this.navCtrl.navigateBack('/');
+  }
 
 }

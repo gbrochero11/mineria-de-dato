@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { NavController } from '@ionic/angular';
 import { of } from 'rxjs';
 import { environment } from 'src/environments/environment';
 
@@ -22,5 +23,9 @@ export class AuthService {
 
   public getAuth() {
     return JSON.parse(localStorage.getItem(this.AUTH_ITEM)!);
+  }
+
+  public closeSesion(){
+    localStorage.clear()
   }
 }

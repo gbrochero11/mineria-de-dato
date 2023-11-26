@@ -1,6 +1,9 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title> Dashboard </ion-title>
+    <ion-buttons slot="end">
+      <ion-icon name="power-outline" (click)="closeSesion()"></ion-icon>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
@@ -32,7 +35,17 @@
       <ion-item slot="header" color="light">
         <ion-label>Tablero DataStudio</ion-label>
       </ion-item>
-      <div class="ion-padding" slot="content">Second Content</div>
+
+      <div class="ion-padding" slot="content">
+        <div>
+          <iframe
+            src="https://lookerstudio.google.com/embed/reporting/daefa776-3aaf-4f6d-a5ea-42ce3b962bec/page/p_1pdl6eo3bd"
+            frameborder="0"
+            style="border: 0"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
     </ion-accordion>
   </ion-accordion-group>
 </ion-content>
